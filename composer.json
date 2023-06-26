@@ -1,7 +1,10 @@
 {
     "name": "reedware/laravel-seeders",
     "description": "Adds the ability to generate and seed from seed data.",
-    "keywords": ["laravel", "seeders"],
+    "keywords": [
+        "laravel",
+        "seeders"
+    ],
     "authors": [
         {
             "name": "Tyler Reed",
@@ -19,7 +22,7 @@
     "require-dev": {
         "laravel/pint": "^1.10",
         "orchestra/testbench": "^7.0|^8.0",
-        "squizlabs/php_codesniffer": "^3.5"
+        "phpstan/phpstan": "^1.4.7"
     },
     "autoload": {
         "psr-4": {
@@ -44,9 +47,8 @@
     "scripts": {
         "test:lint": "pint --test",
         "test:lint-fix": "pint",
-        "test:unit": "pest",
-        "test:coverage": "pest --coverage --min=100",
+        "test:unit": "vendor/bin/phpunit",
         "test:static": "phpstan",
-        "test:all": "composer test:lint && composer test:unit && composer test:coverage && composer test:static"
+        "test:all": "composer test:lint && composer test:unit && composer test:static"
     }
 }

@@ -83,7 +83,7 @@ trait BehavesAsResource
      *
      * @return void
      */
-    public function __construct(Model $resource = null)
+    public final function __construct(Model $resource = null)
     {
         $this->resource = $resource ?: new static::$model;
     }
@@ -111,7 +111,7 @@ trait BehavesAsResource
         $query = (new static::$model)->newQueryWithoutScope(SoftDeletingScope::class);
 
         // Select all columns
-        $query->select((new static::$model)->getTable().'.*');
+        $query->select((new static::$model)->getTable() . '.*');
 
         // Require the matching columns to be non-null
         foreach (static::$match as $column) {
@@ -207,13 +207,13 @@ trait BehavesAsResource
      */
     protected static function mapSoftDeletes(array $attributes)
     {
-        if (! static::softDeletes()) {
+        if (!static::softDeletes()) {
             return $attributes;
         }
 
         $column = (new static::$model)->getDeletedAtColumn();
 
-        $attributes['trashed'] = ! is_null($attributes[$column]);
+        $attributes['trashed'] = !is_null($attributes[$column]);
 
         unset($attributes[$column]);
 
@@ -322,7 +322,7 @@ trait BehavesAsResource
      */
     protected static function unmapSoftDeletes(array $attributes)
     {
-        if (! static::softDeletes()) {
+        if (!static::softDeletes()) {
             return $attributes;
         }
 
@@ -364,7 +364,7 @@ trait BehavesAsResource
         $instance = $query->firstOrNew($match, $attributes);
 
         // Prevent double soft deletion
-        if (static::softDeletes() && $instance->trashed() && ! is_null($attributes[$instance->getDeletedAtColumn()])) {
+        if (static::softDeletes() && $instance->trashed() && !is_null($attributes[$instance->getDeletedAtColumn()])) {
             unset($attributes[$instance->getDeletedAtColumn()]);
         }
 
@@ -390,7 +390,7 @@ trait BehavesAsResource
      */
     protected function allowUpdateOrCreate($instance)
     {
-        return (! $instance->exists && static::allowCreating())
+        return (!$instance->exists && static::allowCreating())
             || ($instance->exists && static::allowUpdating());
     }
 
