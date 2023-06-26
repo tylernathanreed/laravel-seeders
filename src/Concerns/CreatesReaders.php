@@ -30,7 +30,6 @@ trait CreatesReaders
     /**
      * Creates and returns a new reader for the specified filename.
      *
-     *
      * @return \Reedware\LaravelSeeders\Contracts\Reader
      */
     protected function createReader(string $filename)
@@ -46,7 +45,6 @@ trait CreatesReaders
 
     /**
      * Sets the reader resolver callback.
-     *
      *
      * @return $this
      */

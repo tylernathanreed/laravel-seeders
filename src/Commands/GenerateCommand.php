@@ -32,7 +32,6 @@ class GenerateCommand extends SeedCommand
     /**
      * Create a new database seed command instance.
      *
-     *
      * @return void
      */
     public function __construct(FactoryContract $factory, Resolver $resolver)

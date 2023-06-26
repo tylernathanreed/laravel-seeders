@@ -18,7 +18,6 @@ class CsvReader implements Reader
     /**
      * Creates and returns a new csv reader.
      *
-     *
      * @return $this
      */
     public function __construct(string $filename)

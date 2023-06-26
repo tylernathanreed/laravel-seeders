@@ -1,3 +1,6 @@
 {
-    "preset": "laravel"
+    "preset": "laravel",
+    "rules": {
+        "phpdoc_trim_consecutive_blank_line_separation": true
+    }
 }

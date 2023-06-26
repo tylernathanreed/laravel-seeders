@@ -21,7 +21,6 @@ interface Factory
     /**
      * Defines the filename to use with the specified resource or model class.
      *
-     *
      * @return $this
      */
     public function filename(string $class, string $filename);

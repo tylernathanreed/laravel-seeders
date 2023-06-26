@@ -55,7 +55,6 @@ abstract class Seeder extends BaseSeeder
     /**
      * Runs this seeder.
      *
-     *
      * @return void
      */
     public function run(FactoryContract $factory)
@@ -65,7 +64,6 @@ abstract class Seeder extends BaseSeeder
 
     /**
      * Reads the records from storage into the resource table.
-     *
      *
      * @return array
      */
@@ -84,7 +82,6 @@ abstract class Seeder extends BaseSeeder
     /**
      * Generates the seed data from the resource table.
      *
-     *
      * @return void
      */
     public function generate(FactoryContract $factory)
@@ -94,7 +91,6 @@ abstract class Seeder extends BaseSeeder
 
     /**
      * Reads the records from storage into the resource table.
-     *
      *
      * @return void
      */

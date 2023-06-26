@@ -17,7 +17,6 @@ trait ManagesDataFiles
     /**
      * Writes the specified data to the given csv file.
      *
-     *
      * @return string
      */
     protected function writeCsv(string $filename, array $data)
@@ -31,7 +30,6 @@ trait ManagesDataFiles
 
     /**
      * Writes to the specified data file.
-     *
      *
      * @return string
      */

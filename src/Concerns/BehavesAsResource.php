@@ -81,7 +81,6 @@ trait BehavesAsResource
     /**
      * Create a new resource instance.
      *
-     *
      * @return void
      */
     public function __construct(Model $resource = null)
@@ -160,7 +159,6 @@ trait BehavesAsResource
     /**
      * Maps the model attributes to stored attributes.
      *
-     *
      * @return array
      */
     public static function mapAttributes(array $attributes)
@@ -175,7 +173,6 @@ trait BehavesAsResource
     /**
      * Maps array values into json.
      *
-     *
      * @return array
      */
     protected static function mapArrayToJson(array $attributes)
@@ -187,7 +184,6 @@ trait BehavesAsResource
 
     /**
      * Maps boolean values into strings.
-     *
      *
      * @return array
      */
@@ -206,7 +202,6 @@ trait BehavesAsResource
 
     /**
      * Maps the soft deletes datetime to a trashed boolean.
-     *
      *
      * @return array
      */
@@ -227,7 +222,6 @@ trait BehavesAsResource
 
     /**
      * Fills the underlying resource table with records from storage.
-     *
      *
      * @return array
      */
@@ -274,7 +268,6 @@ trait BehavesAsResource
     /**
      * Restores a new resource from storage using the specified array.
      *
-     *
      * @return static
      */
     public static function unserializeFromStorage(array $array)
@@ -285,7 +278,6 @@ trait BehavesAsResource
     /**
      * Transforms an array into this resource.
      *
-     *
      * @return static
      */
     public static function fromArray(array $array)
@@ -295,7 +287,6 @@ trait BehavesAsResource
 
     /**
      * Unmaps stored attributes to model attributes.
-     *
      *
      * @return array
      */
@@ -308,7 +299,6 @@ trait BehavesAsResource
 
     /**
      * Maps array values into json.
-     *
      *
      * @return array
      */
@@ -327,7 +317,6 @@ trait BehavesAsResource
 
     /**
      * Unmaps the trashed boolean to a soft deletes datetime.
-     *
      *
      * @return array
      */

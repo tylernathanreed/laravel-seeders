@@ -37,7 +37,6 @@ trait SelfMigrating
     /**
      * Migrates the remaining table columns.
      *
-     *
      * @return void
      */
     public function migrateColumns(Blueprint $table)
@@ -47,7 +46,6 @@ trait SelfMigrating
 
     /**
      * Migrates the primary key column.
-     *
      *
      * @return void
      */
@@ -65,7 +63,6 @@ trait SelfMigrating
 
     /**
      * Migrates the timestamp columns.
-     *
      *
      * @return void
      */
@@ -89,7 +86,6 @@ trait SelfMigrating
 
     /**
      * Migrates the soft deletes column.
-     *
      *
      * @return void
      */

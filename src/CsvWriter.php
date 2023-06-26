@@ -17,7 +17,6 @@ class CsvWriter implements Writer
     /**
      * Creates and returns a new csv reader.
      *
-     *
      * @return $this
      */
     public function __construct(string $filename)
@@ -27,7 +26,6 @@ class CsvWriter implements Writer
 
     /**
      * Reads and returns resource arrays from storage.
-     *
      *
      * @return void
      */

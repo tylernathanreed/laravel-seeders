@@ -30,7 +30,6 @@ trait CreatesWriters
     /**
      * Creates and returns a new writer for the specified filename.
      *
-     *
      * @return \Reedware\LaravelSeeders\Contracts\Writer
      */
     protected function createWriter(string $filename)
@@ -46,7 +45,6 @@ trait CreatesWriters
 
     /**
      * Sets the writer resolver callback.
-     *
      *
      * @return $this
      */

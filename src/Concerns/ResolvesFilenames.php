@@ -31,7 +31,6 @@ trait ResolvesFilenames
     /**
      * Defines the filename to use with the specified resource or model class.
      *
-     *
      * @return $this
      */
     public function filename(string $class, string $filename)
@@ -87,7 +86,6 @@ trait ResolvesFilenames
     /**
      * Returns a list of guessed filenames to try based on the specified resource class.
      *
-     *
      * @return array
      */
     protected function guessFilename(string $class)
@@ -104,7 +102,6 @@ trait ResolvesFilenames
     /**
      * Returns the guessed filename to try based on the basename of the specified class.
      *
-     *
      * @return array
      */
     public function guessFilenameUsingBasename(string $class)
@@ -114,7 +111,6 @@ trait ResolvesFilenames
 
     /**
      * Sets the callback to be used to guess filenames.
-     *
      *
      * @return $this
      */
