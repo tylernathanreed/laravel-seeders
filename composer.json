@@ -5,6 +5,7 @@
         "laravel",
         "seeders"
     ],
+    "license": "MIT",
     "authors": [
         {
             "name": "Tyler Reed",
