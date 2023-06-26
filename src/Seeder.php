@@ -55,7 +55,6 @@ abstract class Seeder extends BaseSeeder
     /**
      * Runs this seeder.
      *
-     * @param  \Reedware\LaravelSeeders\Contracts\Factory  $factory
      *
      * @return void
      */
@@ -67,7 +66,6 @@ abstract class Seeder extends BaseSeeder
     /**
      * Reads the records from storage into the resource table.
      *
-     * @param  \Reedware\LaravelSeeders\Contracts\Factory  $factory
      *
      * @return array
      */
@@ -86,7 +84,6 @@ abstract class Seeder extends BaseSeeder
     /**
      * Generates the seed data from the resource table.
      *
-     * @param  \Reedware\LaravelSeeders\Contracts\Factory  $factory
      *
      * @return void
      */
@@ -98,7 +95,6 @@ abstract class Seeder extends BaseSeeder
     /**
      * Reads the records from storage into the resource table.
      *
-     * @param  \Reedware\LaravelSeeders\Contracts\Factory  $factory
      *
      * @return void
      */
@@ -121,6 +117,6 @@ abstract class Seeder extends BaseSeeder
      */
     public function resource()
     {
-        throw new RuntimeException('Seeder [' . static::class . '] has no associated resource.');
+        throw new RuntimeException('Seeder ['.static::class.'] has no associated resource.');
     }
 }

@@ -10,7 +10,6 @@ trait DefinesIntegration
      * Defines the environment.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return void
      */
     protected function defineEnvironment($app)
@@ -22,7 +21,6 @@ trait DefinesIntegration
      * Defines the database configuration for the application.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return void
      */
     protected function defineDatabaseEnvironment($app)
@@ -32,9 +30,9 @@ trait DefinesIntegration
 
         // Define the default connection
         $app['config']->set('database.connections.test', [
-            'driver'   => 'sqlite',
+            'driver' => 'sqlite',
             'database' => ':memory:',
-            'prefix'   => '',
+            'prefix' => '',
         ]);
     }
 
@@ -42,13 +40,12 @@ trait DefinesIntegration
      * Returns the package providers.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return array
      */
     protected function getPackageProviders($app)
     {
         return [
-            SeederServiceProvider::class
+            SeederServiceProvider::class,
         ];
     }
 }

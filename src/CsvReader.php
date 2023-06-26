@@ -18,7 +18,6 @@ class CsvReader implements Reader
     /**
      * Creates and returns a new csv reader.
      *
-     * @param  string  $filename
      *
      * @return $this
      */
@@ -29,8 +28,6 @@ class CsvReader implements Reader
 
     /**
      * Reads and returns resource arrays from storage.
-     *
-     * @return \Illuminate\Support\Enumerable
      */
     public function read(): Enumerable
     {

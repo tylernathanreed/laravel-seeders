@@ -10,6 +10,6 @@ class IgnoreColumnGlossarySeeder extends GlossarySeeder
      * @var array
      */
     public static $omit = [
-        'is_popular'
+        'is_popular',
     ];
 }

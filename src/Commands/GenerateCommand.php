@@ -32,8 +32,6 @@ class GenerateCommand extends SeedCommand
     /**
      * Create a new database seed command instance.
      *
-     * @param  \Reedware\LaravelSeeders\Contracts\Factory            $factory
-     * @param  \Illuminate\Database\ConnectionResolverInterface  $resolver
      *
      * @return void
      */

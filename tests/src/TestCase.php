@@ -13,8 +13,6 @@ abstract class TestCase extends BaseTestCase
 
     /**
      * Prepares the testing environment before the current test.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -23,14 +21,12 @@ abstract class TestCase extends BaseTestCase
         Seed::setRootPath(realpath(implode(DIRECTORY_SEPARATOR, [
             __DIR__,
             '..',
-            'data'
+            'data',
         ])));
     }
 
     /**
      * Cleans up the testing environment before the next test.
-     *
-     * @return void
      */
     protected function tearDown(): void
     {
@@ -43,7 +39,6 @@ abstract class TestCase extends BaseTestCase
      * Generates seed data from the specified seeder(s).
      *
      * @param  array|string  $class
-     * *
      * @return $this
      */
     public function generate($class = 'DatabaseSeeder')

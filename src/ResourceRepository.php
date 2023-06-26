@@ -29,7 +29,7 @@ class ResourceRepository
         // and they are all talking to the same cache, we could run
         // into trouble here. We'll prefix internally to fix it.
 
-        $this->prefix = Uuid::uuid4()->toString() . '.';
+        $this->prefix = Uuid::uuid4()->toString().'.';
     }
 
     /**
@@ -39,7 +39,7 @@ class ResourceRepository
     {
         $count = $this->increment($resource) - 1;
 
-        $this->cache->forever($this->prefix . $resource . '.' . $count, $instance->getKey());
+        $this->cache->forever($this->prefix.$resource.'.'.$count, $instance->getKey());
     }
 
     /**
@@ -50,10 +50,10 @@ class ResourceRepository
         $count = $this->count($resource);
 
         for ($i = 0; $i < $count; $i++) {
-            $keys[] = $this->cache->pull($this->prefix . $resource . '.' . $i);
+            $keys[] = $this->cache->pull($this->prefix.$resource.'.'.$i);
         }
 
-        $this->cache->forget($this->prefix . $resource);
+        $this->cache->forget($this->prefix.$resource);
 
         return $keys ?? [];
     }
@@ -63,7 +63,7 @@ class ResourceRepository
      */
     public function count(string $resource): int
     {
-        return $this->cache->get($this->prefix . $resource, 0);
+        return $this->cache->get($this->prefix.$resource, 0);
     }
 
     /**
@@ -71,6 +71,6 @@ class ResourceRepository
      */
     public function increment(string $resource): int
     {
-        return $this->cache->increment($this->prefix . $resource, 1);
+        return $this->cache->increment($this->prefix.$resource, 1);
     }
 }

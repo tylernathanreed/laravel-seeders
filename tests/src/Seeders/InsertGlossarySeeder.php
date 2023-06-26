@@ -14,14 +14,14 @@ class InsertGlossarySeeder extends GlossarySeeder
     /**
      * Whether or not existing records in storage can be updated within the database.
      *
-     * @var boolean
+     * @var bool
      */
     public static $allowUpdating = false;
 
     /**
      * Whether or not missing records in storage can be deleted from the database.
      *
-     * @var boolean
+     * @var bool
      */
     public static $allowDeleting = false;
 }

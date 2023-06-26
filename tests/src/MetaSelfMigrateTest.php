@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Schema;
 use Reedware\LaravelSeeders\Tests\Models\DeletableGlossary;
 use Reedware\LaravelSeeders\Tests\Models\Glossary;
 use Reedware\LaravelSeeders\Tests\Models\HashableGlossary;
-use Reedware\LaravelSeeders\Tests\Models\TimelessGlossary;
 use Reedware\LaravelSeeders\Tests\Models\InsertGlossary;
+use Reedware\LaravelSeeders\Tests\Models\TimelessGlossary;
 
 class MetaSelfMigrateTest extends TestCase
 {

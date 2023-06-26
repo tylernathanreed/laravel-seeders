@@ -2,16 +2,14 @@
 
 namespace Reedware\LaravelSeeders\Tests;
 
+use Reedware\LaravelSeeders\Seed;
 use Reedware\LaravelSeeders\Tests\Models\Glossary;
 use Reedware\LaravelSeeders\Tests\Seeders\PrimaryKeyGlossarySeeder;
-use Reedware\LaravelSeeders\Seed;
 
 class PrimaryKeyGeneratorTest extends TestCase
 {
     /**
      * Sets up the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -32,7 +30,7 @@ class PrimaryKeyGeneratorTest extends TestCase
     {
         Glossary::insert([
             'name' => 'dog',
-            'description' => 'goes woof'
+            'description' => 'goes woof',
         ]);
 
         Seed::filename(Glossary::class, 'data.csv');

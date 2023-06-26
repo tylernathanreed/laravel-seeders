@@ -2,16 +2,14 @@
 
 namespace Reedware\LaravelSeeders\Tests;
 
+use Reedware\LaravelSeeders\Seed;
 use Reedware\LaravelSeeders\Tests\Models\DeletableGlossary;
 use Reedware\LaravelSeeders\Tests\Seeders\DeletableGlossarySeeder;
-use Reedware\LaravelSeeders\Seed;
 
 class DeletableGeneratorTest extends TestCase
 {
     /**
      * Sets up the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -32,7 +30,7 @@ class DeletableGeneratorTest extends TestCase
     {
         DeletableGlossary::insert([
             ['name' => 'dog', 'description' => 'goes woof', 'deleted_at' => null],
-            ['name' => 'cat', 'description' => 'goes meow', 'deleted_at' => (new DeletableGlossary)->freshTimestamp()]
+            ['name' => 'cat', 'description' => 'goes meow', 'deleted_at' => (new DeletableGlossary)->freshTimestamp()],
         ]);
 
         Seed::filename(DeletableGlossary::class, 'data.csv');

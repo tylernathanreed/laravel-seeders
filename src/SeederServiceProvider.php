@@ -2,8 +2,8 @@
 
 namespace Reedware\LaravelSeeders;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
+use Illuminate\Support\ServiceProvider;
 
 class SeederServiceProvider extends ServiceProvider implements DeferrableProvider
 {
@@ -25,8 +25,8 @@ class SeederServiceProvider extends ServiceProvider implements DeferrableProvide
      */
     protected function registerFactory()
     {
-        $this->app->singleton(Contracts\Factory::class, function($app) {
-            return new Factory($app->databasePath('seeders' . DIRECTORY_SEPARATOR . 'data'));
+        $this->app->singleton(Contracts\Factory::class, function ($app) {
+            return new Factory($app->databasePath('seeders'.DIRECTORY_SEPARATOR.'data'));
         });
 
         $this->app->alias(Contracts\Factory::class, 'db.seed');
@@ -70,7 +70,7 @@ class SeederServiceProvider extends ServiceProvider implements DeferrableProvide
         }
 
         $this->commands([
-            Commands\GenerateCommand::class
+            Commands\GenerateCommand::class,
         ]);
     }
 
@@ -82,7 +82,7 @@ class SeederServiceProvider extends ServiceProvider implements DeferrableProvide
     public function provides()
     {
         return [
-            Contracts\Factory::class
+            Contracts\Factory::class,
         ];
     }
 }

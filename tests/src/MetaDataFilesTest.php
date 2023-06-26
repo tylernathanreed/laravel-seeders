@@ -10,7 +10,7 @@ class MetaDataFilesTest extends TestCase
     {
         $filename = $this->writeCsv('example.csv', [
             ['one', 'two'],
-            ['three', 'four']
+            ['three', 'four'],
         ]);
 
         $filepath = Seed::rootPath($filename);

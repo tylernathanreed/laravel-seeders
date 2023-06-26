@@ -11,8 +11,6 @@ class DeletableSeederTest extends TestCase
 {
     /**
      * Sets up the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -38,12 +36,12 @@ class DeletableSeederTest extends TestCase
     {
         DeletableGlossary::insert([
             'name' => 'dog',
-            'description' => 'barks a lot'
+            'description' => 'barks a lot',
         ]);
 
         Seed::filename(DeletableGlossary::class, $this->writeCsv('data.csv', [
             ['name', 'description', 'trashed'],
-            ['dog', 'goes woof', '1']
+            ['dog', 'goes woof', '1'],
         ]));
 
         $this->seed(DeletableGlossarySeeder::class);
@@ -62,12 +60,12 @@ class DeletableSeederTest extends TestCase
         DeletableGlossary::insert([
             'name' => 'dog',
             'description' => 'barks a lot',
-            'deleted_at' => $before
+            'deleted_at' => $before,
         ]);
 
         Seed::filename(DeletableGlossary::class, $this->writeCsv('data.csv', [
             ['name', 'description', 'trashed'],
-            ['dog', 'barks a lot', '1']
+            ['dog', 'barks a lot', '1'],
         ]));
 
         $this->seed(DeletableGlossarySeeder::class);
@@ -85,12 +83,12 @@ class DeletableSeederTest extends TestCase
         DeletableGlossary::insert([
             'name' => 'dog',
             'description' => 'barks a lot',
-            'deleted_at' => (new DeletableGlossary)->freshTimestamp()
+            'deleted_at' => (new DeletableGlossary)->freshTimestamp(),
         ]);
 
         Seed::filename(DeletableGlossary::class, $this->writeCsv('data.csv', [
             ['name', 'description', 'trashed'],
-            ['dog', 'goes woof', '0']
+            ['dog', 'goes woof', '0'],
         ]));
 
         $this->seed(DeletableGlossarySeeder::class);
@@ -106,12 +104,12 @@ class DeletableSeederTest extends TestCase
     {
         DeletableGlossary::insert([
             ['name' => 'dog', 'description' => 'barks a lot'],
-            ['name' => 'cat', 'description' => 'meows a lot']
+            ['name' => 'cat', 'description' => 'meows a lot'],
         ]);
 
         Seed::filename(DeletableGlossary::class, $this->writeCsv('data.csv', [
             ['name', 'description', 'trashed'],
-            ['dog', 'goes woof', '0']
+            ['dog', 'goes woof', '0'],
         ]));
 
         $this->seed(DeletableGlossarySeeder::class);

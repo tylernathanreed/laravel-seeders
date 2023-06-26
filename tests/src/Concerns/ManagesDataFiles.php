@@ -17,8 +17,6 @@ trait ManagesDataFiles
     /**
      * Writes the specified data to the given csv file.
      *
-     * @param  string  $filename
-     * @param  array   $data
      *
      * @return string
      */
@@ -34,8 +32,6 @@ trait ManagesDataFiles
     /**
      * Writes to the specified data file.
      *
-     * @param  string    $filename
-     * @param  \Closure  $handler
      *
      * @return string
      */

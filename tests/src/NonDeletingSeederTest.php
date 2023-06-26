@@ -2,16 +2,14 @@
 
 namespace Reedware\LaravelSeeders\Tests;
 
+use Reedware\LaravelSeeders\Seed;
 use Reedware\LaravelSeeders\Tests\Models\Glossary;
 use Reedware\LaravelSeeders\Tests\Seeders\NonDeletingGlossarySeeder;
-use Reedware\LaravelSeeders\Seed;
 
 class NonDeletingSeederTest extends TestCase
 {
     /**
      * Sets up the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -29,12 +27,12 @@ class NonDeletingSeederTest extends TestCase
     {
         Glossary::insert([
             ['name' => 'dog', 'description' => 'barks a lot'],
-            ['name' => 'cat', 'description' => 'meows a lot']
+            ['name' => 'cat', 'description' => 'meows a lot'],
         ]);
 
         Seed::filename(Glossary::class, $this->writeCsv('data.csv', [
             ['name', 'description'],
-            ['dog', 'goes woof']
+            ['dog', 'goes woof'],
         ]));
 
         $this->seed(NonDeletingGlossarySeeder::class);
@@ -50,13 +48,13 @@ class NonDeletingSeederTest extends TestCase
     {
         Glossary::insert([
             ['name' => 'dog', 'description' => 'barks a lot'],
-            ['name' => 'cat', 'description' => 'meows a lot']
+            ['name' => 'cat', 'description' => 'meows a lot'],
         ]);
 
         Seed::filename(Glossary::class, $this->writeCsv('data.csv', [
             ['name', 'description'],
             ['dog', 'goes woof'],
-            ['cow', 'goes moo']
+            ['cow', 'goes moo'],
         ]));
 
         $this->seed(NonDeletingGlossarySeeder::class);

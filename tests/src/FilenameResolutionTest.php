@@ -46,7 +46,7 @@ class FilenameResolutionTest extends TestCase
         $real = Seed::rootPath('example.csv');
         touch($real);
 
-        Seed::guessFilenamesUsing(function ($class) use ($real) {
+        Seed::guessFilenamesUsing(function ($class) {
             return ['not a real file', 'example.csv'];
         });
 

@@ -2,16 +2,14 @@
 
 namespace Reedware\LaravelSeeders\Tests;
 
+use Reedware\LaravelSeeders\Seed;
 use Reedware\LaravelSeeders\Tests\Models\Glossary;
 use Reedware\LaravelSeeders\Tests\Seeders\GlossarySeeder;
-use Reedware\LaravelSeeders\Seed;
 
 class TraditionalSeederTest extends TestCase
 {
     /**
      * Sets up the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -29,7 +27,7 @@ class TraditionalSeederTest extends TestCase
     {
         Seed::filename(Glossary::class, $this->writeCsv('data.csv', [
             ['name', 'description'],
-            ['dog', 'goes woof']
+            ['dog', 'goes woof'],
         ]));
 
         $this->seed(GlossarySeeder::class);
@@ -46,14 +44,14 @@ class TraditionalSeederTest extends TestCase
     {
         Glossary::insert([
             'name' => 'dog',
-            'description' => 'barks a lot'
+            'description' => 'barks a lot',
         ]);
 
         $before = Glossary::first()->updated_at;
 
         Seed::filename(Glossary::class, $this->writeCsv('data.csv', [
             ['name', 'description'],
-            ['dog', 'goes woof']
+            ['dog', 'goes woof'],
         ]));
 
         $this->seed(GlossarySeeder::class);
@@ -71,14 +69,14 @@ class TraditionalSeederTest extends TestCase
     {
         Glossary::insert([
             'name' => 'dog',
-            'description' => 'barks a lot'
+            'description' => 'barks a lot',
         ]);
 
         $before = Glossary::first()->updated_at;
 
         Seed::filename(Glossary::class, $this->writeCsv('data.csv', [
             ['name', 'description'],
-            ['dog', 'barks a lot']
+            ['dog', 'barks a lot'],
         ]));
 
         $this->seed(GlossarySeeder::class);
@@ -95,12 +93,12 @@ class TraditionalSeederTest extends TestCase
     {
         Glossary::insert([
             ['name' => 'dog', 'description' => 'barks a lot'],
-            ['name' => 'cat', 'description' => 'meows a lot']
+            ['name' => 'cat', 'description' => 'meows a lot'],
         ]);
 
         Seed::filename(Glossary::class, $this->writeCsv('data.csv', [
             ['name', 'description'],
-            ['dog', 'goes woof']
+            ['dog', 'goes woof'],
         ]));
 
         $this->seed(GlossarySeeder::class);
@@ -116,13 +114,13 @@ class TraditionalSeederTest extends TestCase
     {
         Glossary::insert([
             ['name' => 'dog', 'description' => 'barks a lot'],
-            ['name' => 'cat', 'description' => 'meows a lot']
+            ['name' => 'cat', 'description' => 'meows a lot'],
         ]);
 
         Seed::filename(Glossary::class, $this->writeCsv('data.csv', [
             ['name', 'description'],
             ['dog', 'goes woof'],
-            ['cow', 'goes moo']
+            ['cow', 'goes moo'],
         ]));
 
         $this->seed(GlossarySeeder::class);

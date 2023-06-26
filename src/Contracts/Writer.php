@@ -10,7 +10,6 @@ interface Writer
      * Writes the specified resource arrays into storage.
      *
      * @param  \Illuminate\Support\Enumerable
-     *
      * @return void
      */
     public function write(Enumerable $resources);

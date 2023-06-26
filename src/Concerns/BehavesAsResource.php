@@ -32,7 +32,7 @@ trait BehavesAsResource
     /**
      * Whether or not to omit the primary key.
      *
-     * @var boolean
+     * @var bool
      */
     public static $omitPrimaryKey = true;
 
@@ -53,21 +53,21 @@ trait BehavesAsResource
     /**
      * Whether or not new records in storage can be inserted into the database.
      *
-     * @var boolean
+     * @var bool
      */
     public static $allowCreating = true;
 
     /**
      * Whether or not existing records in storage can be updated within the database.
      *
-     * @var boolean
+     * @var bool
      */
     public static $allowUpdating = true;
 
     /**
      * Whether or not missing records in storage can be deleted from the database.
      *
-     * @var boolean
+     * @var bool
      */
     public static $allowDeleting = true;
 
@@ -81,7 +81,6 @@ trait BehavesAsResource
     /**
      * Create a new resource instance.
      *
-     * @param  \Illuminate\Database\Eloquent\Model|null  $resource
      *
      * @return void
      */
@@ -113,7 +112,7 @@ trait BehavesAsResource
         $query = (new static::$model)->newQueryWithoutScope(SoftDeletingScope::class);
 
         // Select all columns
-        $query->select((new static::$model)->getTable() . '.*');
+        $query->select((new static::$model)->getTable().'.*');
 
         // Require the matching columns to be non-null
         foreach (static::$match as $column) {
@@ -161,7 +160,6 @@ trait BehavesAsResource
     /**
      * Maps the model attributes to stored attributes.
      *
-     * @param  array  $attributes
      *
      * @return array
      */
@@ -177,7 +175,6 @@ trait BehavesAsResource
     /**
      * Maps array values into json.
      *
-     * @param  array  $attributes
      *
      * @return array
      */
@@ -191,7 +188,6 @@ trait BehavesAsResource
     /**
      * Maps boolean values into strings.
      *
-     * @param  array  $attributes
      *
      * @return array
      */
@@ -211,7 +207,6 @@ trait BehavesAsResource
     /**
      * Maps the soft deletes datetime to a trashed boolean.
      *
-     * @param  array  $attributes
      *
      * @return array
      */
@@ -223,7 +218,7 @@ trait BehavesAsResource
 
         $column = (new static::$model)->getDeletedAtColumn();
 
-        $attributes['trashed'] = !is_null($attributes[$column]);
+        $attributes['trashed'] = ! is_null($attributes[$column]);
 
         unset($attributes[$column]);
 
@@ -233,7 +228,6 @@ trait BehavesAsResource
     /**
      * Fills the underlying resource table with records from storage.
      *
-     * @param  \Illuminate\Support\Enumerable  $records
      *
      * @return array
      */
@@ -273,14 +267,13 @@ trait BehavesAsResource
 
         // Return the counts
         return [
-            $creates, $updates, $deletes
+            $creates, $updates, $deletes,
         ];
     }
 
     /**
      * Restores a new resource from storage using the specified array.
      *
-     * @param  array  $array
      *
      * @return static
      */
@@ -292,7 +285,6 @@ trait BehavesAsResource
     /**
      * Transforms an array into this resource.
      *
-     * @param  array  $array
      *
      * @return static
      */
@@ -304,7 +296,6 @@ trait BehavesAsResource
     /**
      * Unmaps stored attributes to model attributes.
      *
-     * @param  array  $attributes
      *
      * @return array
      */
@@ -318,7 +309,6 @@ trait BehavesAsResource
     /**
      * Maps array values into json.
      *
-     * @param  array  $attributes
      *
      * @return array
      */
@@ -338,13 +328,12 @@ trait BehavesAsResource
     /**
      * Unmaps the trashed boolean to a soft deletes datetime.
      *
-     * @param  array  $attributes
      *
      * @return array
      */
     protected static function unmapSoftDeletes(array $attributes)
     {
-        if (!static::softDeletes()) {
+        if (! static::softDeletes()) {
             return $attributes;
         }
 
@@ -386,7 +375,7 @@ trait BehavesAsResource
         $instance = $query->firstOrNew($match, $attributes);
 
         // Prevent double soft deletion
-        if (static::softDeletes() && $instance->trashed() && !is_null($attributes[$instance->getDeletedAtColumn()])) {
+        if (static::softDeletes() && $instance->trashed() && ! is_null($attributes[$instance->getDeletedAtColumn()])) {
             unset($attributes[$instance->getDeletedAtColumn()]);
         }
 
@@ -408,19 +397,18 @@ trait BehavesAsResource
      * Returns whether or not the specified instance can be updated or created.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $instance
-     *
-     * @return boolean
+     * @return bool
      */
     protected function allowUpdateOrCreate($instance)
     {
-        return (!$instance->exists && static::allowCreating())
+        return (! $instance->exists && static::allowCreating())
             || ($instance->exists && static::allowUpdating());
     }
 
     /**
      * Returns whether or not the associated model soft deletes.
      *
-     * @return boolean
+     * @return bool
      */
     public static function softDeletes()
     {
@@ -431,7 +419,7 @@ trait BehavesAsResource
     /**
      * Returns whether or not to omit the primary key.
      *
-     * @return boolean
+     * @return bool
      */
     public static function omitPrimaryKey()
     {
@@ -452,14 +440,14 @@ trait BehavesAsResource
         return array_merge(static::$omit, array_filter([
             static::omitPrimaryKey() ? $instance->getKeyName() : null,
             $instance->getCreatedAtColumn(),
-            $instance->getUpdatedAtColumn()
+            $instance->getUpdatedAtColumn(),
         ]));
     }
 
     /**
      * Returns whether or not new records in storage can be inserted into the database.
      *
-     * @return boolean
+     * @return bool
      */
     public static function allowCreating()
     {
@@ -469,7 +457,7 @@ trait BehavesAsResource
     /**
      * Returns whether or not existing records in storage can be updated within the database.
      *
-     * @return boolean
+     * @return bool
      */
     public static function allowUpdating()
     {
@@ -479,7 +467,7 @@ trait BehavesAsResource
     /**
      * Returns whether or not missing records in storage can be deleted from the database.
      *
-     * @return boolean
+     * @return bool
      */
     public static function allowDeleting()
     {

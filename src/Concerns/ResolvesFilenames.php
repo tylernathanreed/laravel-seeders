@@ -31,8 +31,6 @@ trait ResolvesFilenames
     /**
      * Defines the filename to use with the specified resource or model class.
      *
-     * @param  string  $class
-     * @param  string  $filename
      *
      * @return $this
      */
@@ -40,7 +38,7 @@ trait ResolvesFilenames
     {
         $this->filenames[$class] = $filename;
 
-        if (isset($class::$model) && !isset($this->filenames[$class::$model])) {
+        if (isset($class::$model) && ! isset($this->filenames[$class::$model])) {
             $this->filenames[$class::$model] = $filename;
         }
 
@@ -51,7 +49,6 @@ trait ResolvesFilenames
      * Returns the filename for the specified resource class.
      *
      * @param  object|string  $class
-     *
      * @return string|null
      */
     public function getFilenameFor($class)
@@ -62,7 +59,7 @@ trait ResolvesFilenames
         }
 
         // Make sure the class is a string
-        if (!is_string($class)) {
+        if (! is_string($class)) {
             return null;
         }
 
@@ -90,14 +87,13 @@ trait ResolvesFilenames
     /**
      * Returns a list of guessed filenames to try based on the specified resource class.
      *
-     * @param  string  $class
      *
      * @return array
      */
     protected function guessFilename(string $class)
     {
         // If a custom guesser exists, use it
-        if (!is_null($this->guessFilenamesUsingCallback)) {
+        if (! is_null($this->guessFilenamesUsingCallback)) {
             return Arr::wrap(call_user_func($this->guessFilenamesUsingCallback, $class));
         }
 
@@ -108,19 +104,17 @@ trait ResolvesFilenames
     /**
      * Returns the guessed filename to try based on the basename of the specified class.
      *
-     * @param  string  $class
      *
      * @return array
      */
     public function guessFilenameUsingBasename(string $class)
     {
-        return [Str::snake(Str::plural(class_basename($class)), '_') . '.csv'];
+        return [Str::snake(Str::plural(class_basename($class)), '_').'.csv'];
     }
 
     /**
      * Sets the callback to be used to guess filenames.
      *
-     * @param  callable  $callback
      *
      * @return $this
      */
@@ -135,19 +129,17 @@ trait ResolvesFilenames
      * Returns the root path for filenames.
      *
      * @param  string  $path
-     *
      * @return string
      */
     public function rootPath($path = '')
     {
-        return $this->rootPath . ($path ? DIRECTORY_SEPARATOR . $path : $path);
+        return $this->rootPath.($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**
      * Sets the root path for filenames.
      *
      * @param  string  $path
-     *
      * @return $this
      */
     public function setRootPath($path)

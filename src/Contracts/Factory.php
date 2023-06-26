@@ -21,8 +21,6 @@ interface Factory
     /**
      * Defines the filename to use with the specified resource or model class.
      *
-     * @param  string  $class
-     * @param  string  $filename
      *
      * @return $this
      */
@@ -32,7 +30,6 @@ interface Factory
      * Returns the filename for the specified resource class.
      *
      * @param  object|string  $class
-     *
      * @return string|null
      */
     public function getFilenameFor($class);

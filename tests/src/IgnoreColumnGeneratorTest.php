@@ -2,16 +2,14 @@
 
 namespace Reedware\LaravelSeeders\Tests;
 
+use Reedware\LaravelSeeders\Seed;
 use Reedware\LaravelSeeders\Tests\Models\Glossary;
 use Reedware\LaravelSeeders\Tests\Seeders\IgnoreColumnGlossarySeeder;
-use Reedware\LaravelSeeders\Seed;
 
 class IgnoreColumnGeneratorTest extends TestCase
 {
     /**
      * Sets up the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -33,7 +31,7 @@ class IgnoreColumnGeneratorTest extends TestCase
         Glossary::insert([
             'name' => 'dog',
             'description' => 'goes woof',
-            'is_popular' => 1
+            'is_popular' => 1,
         ]);
 
         Seed::filename(Glossary::class, 'data.csv');

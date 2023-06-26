@@ -7,7 +7,7 @@ class PrimaryKeyGlossarySeeder extends GlossarySeeder
     /**
      * Whether or not to omit the primary key.
      *
-     * @var boolean
+     * @var bool
      */
     public static $omitPrimaryKey = false;
 }

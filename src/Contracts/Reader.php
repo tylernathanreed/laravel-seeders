@@ -8,8 +8,6 @@ interface Reader
 {
     /**
      * Reads and returns resource arrays from storage.
-     *
-     * @return \Illuminate\Support\Enumerable
      */
     public function read(): Enumerable;
 }

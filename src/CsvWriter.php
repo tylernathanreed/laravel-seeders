@@ -17,7 +17,6 @@ class CsvWriter implements Writer
     /**
      * Creates and returns a new csv reader.
      *
-     * @param  string  $filename
      *
      * @return $this
      */
@@ -29,7 +28,6 @@ class CsvWriter implements Writer
     /**
      * Reads and returns resource arrays from storage.
      *
-     * @param  \Illuminate\Support\Enumerable  $records
      *
      * @return void
      */
@@ -45,7 +43,7 @@ class CsvWriter implements Writer
         $records->each(function ($record) use ($handle, &$header) {
 
             // Check if the header hasn't been written
-            if (!$header) {
+            if (! $header) {
                 // Write the header
                 fputcsv($handle, array_keys($record));
 

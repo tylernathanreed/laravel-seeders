@@ -14,7 +14,6 @@ class Factory implements FactoryContract
      * Creates a new factory instance.
      *
      * @param  string  $rootPath
-     *
      * @return $this
      */
     public function __construct($rootPath)

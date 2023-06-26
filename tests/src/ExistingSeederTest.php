@@ -2,16 +2,14 @@
 
 namespace Reedware\LaravelSeeders\Tests;
 
+use Reedware\LaravelSeeders\Seed;
 use Reedware\LaravelSeeders\Tests\Models\Glossary;
 use Reedware\LaravelSeeders\Tests\Seeders\ExistingGlossarySeeder;
-use Reedware\LaravelSeeders\Seed;
 
 class ExistingSeederTest extends TestCase
 {
     /**
      * Sets up the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -29,7 +27,7 @@ class ExistingSeederTest extends TestCase
     {
         Seed::filename(Glossary::class, $this->writeCsv('data.csv', [
             ['name', 'description'],
-            ['dog', 'goes woof']
+            ['dog', 'goes woof'],
         ]));
 
         $this->seed(ExistingGlossarySeeder::class);
@@ -44,14 +42,14 @@ class ExistingSeederTest extends TestCase
     {
         Glossary::insert([
             'name' => 'dog',
-            'description' => 'barks a lot'
+            'description' => 'barks a lot',
         ]);
 
         $before = Glossary::first()->updated_at;
 
         Seed::filename(Glossary::class, $this->writeCsv('data.csv', [
             ['name', 'description'],
-            ['dog', 'goes woof']
+            ['dog', 'goes woof'],
         ]));
 
         $this->seed(ExistingGlossarySeeder::class);

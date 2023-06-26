@@ -7,7 +7,7 @@ class NonDeletingGlossarySeeder extends GlossarySeeder
     /**
      * Whether or not missing records in storage can be deleted from the database.
      *
-     * @var boolean
+     * @var bool
      */
     public static $allowDeleting = false;
 }
