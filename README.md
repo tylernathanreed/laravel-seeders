@@ -2,6 +2,12 @@
 
 This package adds the ability to generate and seed from seed data.
 
+[![Laravel Version](https://img.shields.io/badge/Laravel-9.x%2F10.x-blue)](https://laravel.com/)
+[![Automated Tests](https://github.com/tylernathanreed/laravel-seeders/actions/workflows/tests.yml/badge.svg)](https://github.com/tylernathanreed/laravel-seeders/actions/workflows/tests.yml)
+[![Coding Standards](https://github.com/tylernathanreed/laravel-seeders/actions/workflows/coding-standards.yml/badge.svg)](https://github.com/tylernathanreed/laravel-seeders/actions/workflows/coding-standards.yml)
+[![Static Analysis](https://github.com/tylernathanreed/laravel-seeders/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/tylernathanreed/laravel-seeders/actions/workflows/static-analysis.yml)
+[![Latest Stable Version](https://poser.pugx.org/reedware/laravel-seeders/v/stable)](https://packagist.org/packages/reedware/laravel-seeders)
+
 ## Introduction
 
 Seeders in Laravel are great for seeding fake data, but that's not their only use case. Seeders are also often used for seeding the boilerplate application data used in glossary type tables (e.g. enumerables, drop-down options, etc.), or tables managed by developers (e.g. roles, permissions, etc.). However, when seeding boilerplate data, there can be a number of complications that arise over time. This package aims to provide seeding application data, and solves the following complications that come with it:
